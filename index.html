@@ -8,13 +8,21 @@
     <div class="container">
         <h1>Calculateur d'Hydratation</h1>
         <form id="hydrationForm">
-            <input type="number" id="weight" placeholder="Poids (en kg)" required>
-            <input type="number" id="age" placeholder="Âge" required>
-            <select id="gender">
-                <option value="male">Homme</option>
-                <option value="female">Femme</option>
-            </select>
-            <button type="submit">Calculer</button>
+            <div class="form-group">
+                <input type="number" id="weight" placeholder="Poids (en kg)" required>
+            </div>
+            <div class="form-group">
+                <input type="number" id="age" placeholder="Âge" required>
+            </div>
+            <div class="form-group">
+                <select id="gender">
+                    <option value="male">Homme</option>
+                    <option value="female">Femme</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit">Calculer</button>
+            </div>
         </form>
         <div id="result"></div>
     </div>

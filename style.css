@@ -1,17 +1,68 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Helvetica', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    background-color: #e0f7fa; /* Couleur de fond légèrement bleue */
 }
 
 .container {
     text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    max-width: 400px;
+}
+
+h1 {
+    color: #0277bd; /* Bleu foncé pour le titre */
 }
 
 input, select, button {
     margin: 10px;
     padding: 10px;
+    border-radius: 5px; /* Bords arrondis */
+    border: 1px solid #b3e5fc; /* Bordure bleue claire */
+    background-color: #e1f5fe; /* Arrière-plan bleu très clair */
+    outline: none;
 }
+
+button {
+    color: rgb(0, 0, 0);
+    background-color: #0288d1; /* Bleu soutenu pour le bouton */
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    background-color: #0277bd;
+}
+
+#result {
+    margin-top: 20px;
+    color: #01579b; /* Bleu pour le résultat */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input, select, button {
+    width: 100%; /* Largeur complète pour aligner les éléments */
+    margin: 5px 0; /* Espacement vertical */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #b3e5fc;
+    background-color: #e1f5fe;
+    outline: none;
+}
+input[type="number"], select, button {
+    width: calc(100% - 20px); 
+    max-width: 300px; 
+}
+
