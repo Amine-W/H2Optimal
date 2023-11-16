@@ -5,7 +5,10 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #e0f7fa; /* Couleur de fond légèrement bleue */
+    background-image: url('./images/DALL·E\ 2023-11-16\ 06.28.19\ -\ Create\ a\ minimalist\ and\ very\ sober\ background\ for\ a\ hydration\ calculator\ website.\ Use\ a\ light\ shade\ of\ blue\ to\ suggest\ a\ connection\ to\ water\ and\ hydra.png'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .container {
@@ -15,54 +18,71 @@ body {
     border-radius: 15px;
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
     max-width: 400px;
+    width: 90%; /* Responsive width */
 }
 
 h1 {
     color: #0277bd; /* Bleu foncé pour le titre */
 }
 
-input, select, button {
-    margin: 10px;
-    padding: 10px;
-    border-radius: 5px; /* Bords arrondis */
-    border: 1px solid #b3e5fc; /* Bordure bleue claire */
-    background-color: #e1f5fe; /* Arrière-plan bleu très clair */
-    outline: none;
-}
-
-button {
-    color: rgb(0, 0, 0);
-    background-color: #0288d1; /* Bleu soutenu pour le bouton */
-    cursor: pointer;
-    border: none;
-}
-
-button:hover {
-    background-color: #0277bd;
-}
-
-#result {
-    margin-top: 20px;
-    color: #01579b; /* Bleu pour le résultat */
-}
-
 .form-group {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%; /* Full width to align children */
+    margin-bottom: 15px;
 }
 
-input, select, button {
-    width: 100%; /* Largeur complète pour aligner les éléments */
-    margin: 5px 0; /* Espacement vertical */
+input[type="number"], select, button {
+    width: calc(100% - 20px); /* Adjust for padding */
+    max-width: 300px; /* Maximum width */
+    margin: 5px 0;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #b3e5fc;
     background-color: #e1f5fe;
     outline: none;
-}
-input[type="number"], select, button {
-    width: calc(100% - 20px); 
-    max-width: 300px; 
+    transition: all 0.3s ease; /* Transition for interaction */
 }
 
+input:focus, select:focus, button:focus {
+    box-shadow: 0 0 0 2px #29b6f6;
+    border-color: #29b6f6;
+}
+
+button {
+    color: white;
+    background-color: #0288d1;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.3s ease; /* Transition for button */
+}
+
+button:hover {
+    background-color: #0277bd;
+    transform: scale(1.05); /* Slight scale on hover */
+}
+
+#result {
+    margin-top: 20px;
+    color: #01579b;
+    opacity: 0; /* Start invisible for animation */
+    transition: opacity 1s ease; /* Fade in effect */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .form-group {
+        width: auto;
+    }
+
+    input[type="number"], select, button {
+        width: 100%;
+        max-width: none;
+    }
+}

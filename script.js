@@ -6,7 +6,7 @@ document.getElementById('hydrationForm').addEventListener('submit', function(eve
     const gender = document.getElementById('gender').value;
 
     const waterIntake = calculateHydration(weight, age, gender);
-    document.getElementById('result').innerText = `Votre apport hydrique quotidien recommandé est de ${waterIntake} litres.`;
+    updateUI(waterIntake);
 });
 
 function calculateHydration(weight, age, gender) {
@@ -14,4 +14,10 @@ function calculateHydration(weight, age, gender) {
     if (age > 50) base *= 1.05;
     if (gender === 'female') base *= 0.9;
     return base.toFixed(2);
+}
+
+function updateUI(waterIntake) {
+    const resultDiv = document.getElementById('result');
+    resultDiv.innerText = `Votre apport hydrique quotidien recommandé est de ${waterIntake} litres.`;
+    resultDiv.style.opacity = 1; // Fade in the result
 }
